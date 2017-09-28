@@ -1,0 +1,3 @@
+rootProject.name = 'appf_inter'
+
+include ':app'
