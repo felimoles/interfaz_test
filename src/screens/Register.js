@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import{View,Text} from 'react-native';
 
- export default class HomeView extends Component{
+ export default class Register extends Component{
         constructor(props) {
         super(props);
    
@@ -16,7 +16,7 @@ import{View,Text} from 'react-native';
 
         return (
 
-            <Text> homeView </Text>
+            <Text> Registro</Text>
 
         );
 
