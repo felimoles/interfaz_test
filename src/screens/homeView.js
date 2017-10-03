@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import{View,Text} from 'react-native';
+import{View,Text, Picker,StyleSheet} from 'react-native';
 
  export default class HomeView extends Component{
         constructor(props) {
@@ -15,9 +15,8 @@ import{View,Text} from 'react-native';
     render(){
 
         return (
-
-            <Text> homeView </Text>
-
+            <Text> Selecciona tu ubicacion </Text>
+                  
         );
 
     }
@@ -25,3 +24,17 @@ import{View,Text} from 'react-native';
 }
 
 
+var styles = StyleSheet.create({
+
+  container: {
+  flex: 1,
+flexDirection: 'column',
+  backgroundColor:'white',
+  // remove width and height to override fixed static size
+  width: null,
+  height:null,
+},
+  picker:{
+    height:88
+  }
+});
