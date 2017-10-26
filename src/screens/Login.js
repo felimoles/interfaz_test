@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import{View,Text} from 'react-native';
-import {FormLabel,FormInput,Button, Divider} from 'react-native-elements'
- export default class Login extends Component{
+import {FormLabel,FormInput,Button, Divider} from 'react-native-elements';
+ 
+ 
+export default class Login extends Component{
         constructor(props) {
         super(props);
    

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import{View,Text} from 'react-native';
+import{View,Text,Button} from 'react-native';
 
  export default class Ini extends Component{
         constructor(props) {
@@ -11,13 +11,32 @@ import{View,Text} from 'react-native';
         };
       }
 
+       static navigationOptions = {
+    title: 'Resultados',
+  }
+ a(){
+        console.log("ad")
+     }
 
     render(){
 
         return (
+<View>
+           
+            
+              <Button
+              onPress={this.a.bind(this)}
+  title="Procesar Datos"
+  color="#841584"
+  disabled={true}
+ 
 
-            <Text> IniView </Text>
 
+              />
+
+
+             <Text> </Text>
+</View>
         );
 
     }
