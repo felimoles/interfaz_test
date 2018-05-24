@@ -1,9 +1,13 @@
 import React, {Component} from "react";
-import{View,Text} from 'react-native';
-import {FormLabel,FormInput,Button, Divider} from 'react-native-elements';
- 
+import{View,Text,Image} from 'react-native';
+import { Container, Header, Content, Form, Item, Input,Button,Body,Title, Separator } from 'native-base'
+import { Icon } from "react-native-elements";
  
 export default class Login extends Component{
+    static navigationOptions = {
+        title: 'Bienvenido',
+       
+      }
         constructor(props) {
         super(props);
    
@@ -26,48 +30,55 @@ export default class Login extends Component{
 
      login(a,b){
             console.log(a,b);
-          if(this.state.password == this.state.input){
-               this.props.navigation.navigate('Tabs');
+         if(this.state.password == this.state.input){
+               this.props.navigation.navigate('HomeView');
                console.log("success");
-          }else {
-               console.log("fail");
-               //this.props.navigation.navigate('Login')
+         }else {
+            //   console.log("fail");
+             //  this.props.navigation.navigate('Login')
           }
      }
 
     render(){
 
         return (
-            <View>
-     <FormLabel>Email</FormLabel>
-                    <FormInput style={{
-                         margin: 15,
-                         height: 40,
-                         borderColor: '#7a42f4',
-                         borderWidth: 1
-                    }} onChangeText={(text) => this.setEmail(text)}
-                    />
-                    <FormLabel>Contraseña</FormLabel>
+<Container>
+     
+        <Content>
+            <View style={{alignItems:'center',margin:10}}>
 
-                    <FormInput style={{
-                         margin: 15,
-                         height: 40,
-                         borderColor: '#7a42f4',
-                         borderWidth: 1
-                    }} onChangeText={(text) => this.setPassword(text)} secureTextEntry={this.state.showText}
-                    />
-
-                    <Text onPress={() => {
-                         this.setState({
-                              'showText': !this.state.showText
-                         })
-                    }}>Mostrar Contraseña</Text>
-                    <Text> </Text>
-
-                    <Button title='Entrar' onPress= {this.login.bind(this,"test",this.input)}/>
-                    <Text> </Text>
-                     <Button title='Registro' onPress= {this.register.bind(this)}/>
-                        </View>
+              <Image
+                style={{width: 70, height: 70 }}
+                source={require('../img/logo-forestal-inicio-app.png')}
+              />
+              </View>
+          <Form style={{marginBottom:10}}>
+            <Item>
+              <Input 
+              onChangeText={(text) => this.setEmail(text)}
+              placeholder="Usuario" />
+            </Item>
+            <Item last>
+              <Input
+               onChangeText={(text) => this.setPassword(text)} 
+              placeholder="Contraseña" />
+            </Item>
+          </Form>
+          <Button block primary
+          style={{marginBottom:10, margin:10}}
+           onPress= {this.login.bind(this)}
+           >
+           <Text> Entrar </Text></Button>
+          <Button block  primary style={{marginBottom:10, margin:10}}><Text> Registro </Text></Button>
+          
+        </Content>
+        <Button iconRight info small style={{bottom:10,marginLeft:'20%'}}>
+       
+            <Text style={{margin:5}} >Acerca de la aplicación</Text>
+            <Icon style={{margin:5}}  name='more' />
+          
+          </Button>
+      </Container>
         );
 
     }
